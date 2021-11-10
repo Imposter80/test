@@ -73,7 +73,7 @@
                         <div class="form-check">
                             <input class="check_task1" type="radio" name="check_task2" id="check_task2"  value="1" checked >
                             <label class="form-check-label" for="flexRadioDefault1">
-                                Использовать массив по умолчанию - [1, 2, 3, 2, 7] [4, 5, 6, 8, 1] [7, 8, 9, 4, 5]
+                                Использовать массив по умолчанию 
                             </label>
                         </div>
                         <div class="form-check">
