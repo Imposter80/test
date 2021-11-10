@@ -4,7 +4,7 @@
 //  default values
 $firstTask = [1, 3, 5, 4, 5, 7];
 
-$secondTask = [[1, 2, 3, 2, 7], [4, 5, 6, 8, 1], [7, 8, 9, 4, 5]];
+$secondTask = [[1, 2, 3, 2, 7, 3 ,8, -7], [4, 5, 6, 0, 1, 9, 2, 1 ], [7, 8, 9, 4, 5, 6, 4, 5]];
 
 $thirdTask  = [ ["Hello", "world"], ["Brad", "came", "to", "dinner", "with", "us"], ["He", "loves", "tacos"] ];
 $alignment = ["LEFT", "RIGHT", "LEFT"];
@@ -58,7 +58,11 @@ function compareArrey($arr){
 function checkMatrix($arr){
     $result = [];
     for ($i = 0; $i <= count($arr[0]) - 3; $i++) {
-        $ar =array_unique(array_merge((array_slice($arr[0], $i, 3)), (array_slice($arr[1], $i, 3)), (array_slice($arr[2], $i, 3))));
+        //оба варианта рабочие
+    //$ar =  array_intersect(array(1,2,3,4,5,6,7,8,9) , array_unique(array_merge((array_slice($arr[0], $i, 3)), (array_slice($arr[1], $i, 3)), (array_slice($arr[2], $i, 3)))));
+      $ar = array_filter(array_unique(array_merge((array_slice($arr[0], $i, 3)), (array_slice($arr[1], $i, 3)), (array_slice($arr[2], $i, 3)))), function($v) {
+          return ($v > 0 && $v < 10);
+      });
         if (count($ar) == 9){
             $result[] = true;
         }else{
